@@ -186,3 +186,11 @@ print(f"\n--- Testing set_isbn on '{book_invalid_isbn_short.title}' (current ISB
 book_invalid_isbn_short.set_isbn("0987654321") # Now set a valid one
 print(f"Details after setting valid ISBN: {book_invalid_isbn_short.get_item_details()}")
 print("-----")
+
+DEBUG: set_isbn called for 'The Pragmatic Programmer' with new_isbn_value: 'isbn-short' (type: <class 'str'>)
+DEBUG: Current self._isbn_number before anything: '123-456-7890'
+DEBUG: simplified_isbn: 'isbnshort', length_of_simplified: 9
+DEBUG: Condition (length == 10 or length == 13) is FALSE for length 9
+Error (Book: The Pragmatic Programmer): Invalid ISBN format 'isbn-short'. Length w/o hyphens: 9. Current ISBN ('123-456-7890') is NOT changed.
+DEBUG: self._isbn_number at end of set_isbn: '123-456-7890'
+Details after setting 'isbn-short' (should not change from previous valid): Title: The Pragmatic Programmer, Year: 1999, Author: Andy Hunt & Dave Thomas, ISBN: 123-456-7890
